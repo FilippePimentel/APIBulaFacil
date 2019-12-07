@@ -8,7 +8,6 @@ using APIBulaFacil.Application.ViewModels.Medicamentos;
 using APIBulaFacil.Application.ViewModels.ModosDeUso;
 using APIBulaFacil.Application.ViewModels.Substancias;
 using APIBulaFacil.Application.ViewModels.UnidadesMedida;
-using APIBulaFacil.Application.ViewModels.UsuarioMobile;
 using APIBulaFacil.Application.ViewModels.Usuarios;
 using APIBulaFacil.Domain.Entities;
 using AutoMapper;
@@ -24,12 +23,8 @@ namespace APIBulaFacil.Application.Mappings
     {
         public ViewModelToEntityMap()
         {
-            CreateMap<UsuarioCadastroViewModel, Usuario>()
-                .Include<FarmaciaCadastroViewModel, Farmacia>()
-                .Include<UsuarioMobileCadastroViewModel, UsuarioMobile>();
-            CreateMap<UsuarioEdicaoViewModel, Usuario>()
-                .Include<FarmaciaEdicaoViewModel, Farmacia>()
-                .Include<UsuarioMobileEdicaoViewModel, UsuarioMobile>();
+            CreateMap<UsuarioCadastroViewModel, Usuario>();
+            CreateMap<UsuarioEdicaoViewModel, Usuario>();
 
             CreateMap<EnderecoCadastroViewModel, Endereco>();
             CreateMap<EnderecoEdicaoViewModel, Endereco>();
@@ -49,23 +44,10 @@ namespace APIBulaFacil.Application.Mappings
                       Uf = endereco.Uf
                   }));
 
-            CreateMap<FarmaciaEdicaoViewModel, Farmacia>()
-             .ForMember(farmacia => farmacia.Endereco,
-              map => map.MapFrom(
-                  endereco => new Endereco
-                  {
-                      Rua = endereco.Rua,
-                      Cep = endereco.Cep,
-                      Cidade = endereco.Cidade,
-                      Complemento = endereco.Complemento,
-                      Latitude = endereco.Latitude,
-                      Longitude = endereco.Longitude,
-                      Pluscode = endereco.Pluscode,
-                      Uf = endereco.Uf
-                  }));
+            CreateMap<FarmaciaEdicaoViewModel, Farmacia>();
 
             CreateMap<ContraIndicacaoCadastroViewModel, ContraIndicacao>();
-            CreateMap<ContraIndicacaoEdicaoViewModel, ContraIndicacao>();
+            CreateMap <ContraIndicacaoEdicaoViewModel, ContraIndicacao>();
 
             CreateMap<IndicacaoCadastroViewModel, Indicacao>();
             CreateMap<IndicacaoEdicaoViewModel, Indicacao>();
@@ -87,9 +69,6 @@ namespace APIBulaFacil.Application.Mappings
 
             CreateMap<MedicamentoFarmaciaCadastroViewModel, MedicamentoFarmacia>();
             CreateMap<MedicamentoFarmaciaEdicaoViewModel, MedicamentoFarmacia>();
-
-            CreateMap<UsuarioMobileCadastroViewModel, UsuarioMobile>();
-            CreateMap<UsuarioMobileEdicaoViewModel, UsuarioMobile>();
         }
     }
 }

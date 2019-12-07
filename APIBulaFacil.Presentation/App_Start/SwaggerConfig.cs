@@ -17,8 +17,10 @@ namespace APIBulaFacil.Presentation
             GlobalConfiguration.Configuration
                            .EnableSwagger(c =>
                            {
-                               //c.DocumentFilter<AuthTokenOperation>();
-                               //c.OperationFilter<AuthorizationHeaderParameterOperationFilter>(); 
+                               c.DocumentFilter<AuthTokenOperation>();
+                               c.OperationFilter<AuthorizationHeaderParameterOperationFilter>();
+
+
                                c.SingleApiVersion("v1", "APIBulaFacil.Presentation");
 })
                 .EnableSwaggerUi(c =>

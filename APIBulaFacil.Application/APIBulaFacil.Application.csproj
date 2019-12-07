@@ -253,7 +253,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Contracts\IUsuarioMobileApplicationService.cs" />
     <Compile Include="Contracts\IMedicamentoFarmaciaApplicationService.cs" />
     <Compile Include="Contracts\IIndicacaoApplicationService.cs" />
     <Compile Include="Contracts\IMedicamentoApplicationService.cs" />
@@ -269,7 +268,6 @@
     <Compile Include="Mappings\EntityToViewModelMap.cs" />
     <Compile Include="Mappings\ViewModelToEntityMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\UsuarioMobileApplicationService.cs" />
     <Compile Include="Services\MedicamentoFarmaciaApplicationService.cs" />
     <Compile Include="Services\IndicacaoApplicationService.cs" />
     <Compile Include="Services\BulaFacilApplicationService.cs" />
@@ -281,6 +279,7 @@
     <Compile Include="Services\FarmaciaApplicationService .cs" />
     <Compile Include="Services\EnderecoApplicationService.cs" />
     <Compile Include="Services\UsuarioApplicationService.cs" />
+    <Compile Include="ViewModels\AATeste\Class1.cs" />
     <Compile Include="ViewModels\BulasFacil\BulaFacilCadastroViewModel.cs" />
     <Compile Include="ViewModels\BulasFacil\BulaFacilConsultaViewModel.cs" />
     <Compile Include="ViewModels\BulasFacil\BulaFacilEdicaoViewModel.cs" />
@@ -311,9 +310,6 @@
     <Compile Include="ViewModels\UnidadesMedida\UnidadeMedidaCadastroViewModel.cs" />
     <Compile Include="ViewModels\UnidadesMedida\UnidadeMedidaConsultaViewModel.cs" />
     <Compile Include="ViewModels\UnidadesMedida\UnidadeMedidaEdicaoViewModel.cs" />
-    <Compile Include="ViewModels\UsuarioMobile\UsuarioMobileCadastroViewModel.cs" />
-    <Compile Include="ViewModels\UsuarioMobile\UsuarioMobileEdicaoViewModel.cs" />
-    <Compile Include="ViewModels\UsuarioMobile\UsuarioMobileConsultaViewModel.cs" />
     <Compile Include="ViewModels\Usuarios\UsuarioCadastroViewModel.cs" />
     <Compile Include="ViewModels\Usuarios\UsuarioConsultaViewModel.cs" />
     <Compile Include="ViewModels\Usuarios\UsuarioEdicaoViewModel.cs" />

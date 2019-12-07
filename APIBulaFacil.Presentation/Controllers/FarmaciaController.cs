@@ -15,7 +15,7 @@ namespace APIBulaFacil.Presentation.Controllers
     {
         //atributo
         private readonly IFarmaciaApplicationService applicationService;
-        private MensagemError MensagensErro { get; set; }
+        private MensagemError mensagensErro { get; set; }
 
         public FarmaciaController(IFarmaciaApplicationService applicationService)
         {
@@ -30,7 +30,6 @@ namespace APIBulaFacil.Presentation.Controllers
 
             try
             {
-                model.Senha = Criptografia.EncryptMD5(model.Senha);
                 applicationService.Incluir(model);
                 return Request.CreateResponse(HttpStatusCode.OK);
             }

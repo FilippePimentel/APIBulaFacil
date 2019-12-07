@@ -8,7 +8,6 @@ using APIBulaFacil.Application.ViewModels.Medicamentos;
 using APIBulaFacil.Application.ViewModels.ModosDeUso;
 using APIBulaFacil.Application.ViewModels.Substancias;
 using APIBulaFacil.Application.ViewModels.UnidadesMedida;
-using APIBulaFacil.Application.ViewModels.UsuarioMobile;
 using APIBulaFacil.Application.ViewModels.Usuarios;
 using APIBulaFacil.Domain.Entities;
 using AutoMapper;
@@ -30,7 +29,6 @@ namespace APIBulaFacil.Application.Mappings
             CreateMap<UnidadeMedida, UnidadeMedidaConsultaViewModel>();
             CreateMap<BulaFacil, BulaFacilConsultaViewModel>();
             CreateMap<MedicamentoFarmaciaConsultaViewModel, MedicamentoFarmacia>();
-            CreateMap<UsuarioMobile, UsuarioMobileConsultaViewModel>();
         }
     }
 }
