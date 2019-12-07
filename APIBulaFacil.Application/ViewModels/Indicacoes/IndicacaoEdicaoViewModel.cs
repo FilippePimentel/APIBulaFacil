@@ -11,7 +11,7 @@ namespace APIBulaFacil.Application.ViewModels.Indicacoes
     {
         public int IdIndicacao { get; set; }
 
-        [Required(ErrorMessage = "{0} : Campo obrigatório.")]
+        [Required(ErrorMessage = "Campo obrigatório.")]
         public string DescricaoIndicacao { get; set; }
     }
 }

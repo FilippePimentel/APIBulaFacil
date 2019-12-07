@@ -61,11 +61,7 @@ namespace APIBulaFacil.IoC
             container.Register<IMedicamentoFarmaciaApplicationService, MedicamentoFarmaciaApplicationService>(Lifestyle.Scoped);
             container.Register<IMedicamentoFarmaciaDomainService, MedicamentoFarmaciaDomainService>(Lifestyle.Scoped);
             container.Register<IMedicamentoFarmaciaRepository, MedicamentoFarmaciaRepository>(Lifestyle.Scoped);
-
-            container.Register<IUsuarioMobileApplicationService, UsuarioMobileApplicationService>(Lifestyle.Scoped);
-            container.Register<IUsuarioMobileDomainService, UsuarioMobileDomainService>(Lifestyle.Scoped);
-            container.Register<IUsuarioMobileRepository, UsuarioMobileRepository>(Lifestyle.Scoped);
-
+            
             container.Register<IUnitOfWork, UnitOfWork>(Lifestyle.Scoped);
             container.Register<DataContext>(Lifestyle.Scoped);
 

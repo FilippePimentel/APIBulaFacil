@@ -8,9 +8,9 @@ namespace APIBulaFacil.Domain.Entities
 {
     public class Usuario
     {
-        public virtual int IdUsuario { get; set; }
-        public virtual string Nome { get; set; }
-        public virtual string Email { get; set; }
-        public virtual string Senha { get; set; }
+        public int IdUsuario { get; set; }
+        public string Nome { get; set; }
+        public string Email { get; set; }
+        public string Senha { get; set; }
     }
 }
