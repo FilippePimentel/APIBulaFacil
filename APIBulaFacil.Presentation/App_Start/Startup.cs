@@ -1,13 +1,9 @@
-﻿using System;
-using System.Threading.Tasks;
-using System.Web.Http;
-using APIBulaFacil.Application.Contracts;
-using APIBulaFacil.Presentation.App_Start;
-using APIBulaFacil.Presentation.Providers;
-using Microsoft.Owin;
+﻿using Microsoft.Owin;
 using Microsoft.Owin.Cors;
 using Microsoft.Owin.Security.OAuth;
 using Owin;
+using System;
+using System.Web.Http;
 
 [assembly: OwinStartup(typeof(APIBulaFacil.Presentation.App_Start.Startup))]
 
@@ -19,10 +15,10 @@ namespace APIBulaFacil.Presentation.App_Start
         {
             HttpConfiguration config = new HttpConfiguration();
 
-            ConfigureOAuth(app);
+            //ConfigureOAuth(app);
 
             WebApiConfig.Register(config);
-            app.UseCors(Microsoft.Owin.Cors.CorsOptions.AllowAll);
+            app.UseCors(CorsOptions.AllowAll);
         }
 
         public void ConfigureOAuth(IAppBuilder app)

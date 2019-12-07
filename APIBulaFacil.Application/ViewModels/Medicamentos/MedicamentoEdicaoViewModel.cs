@@ -10,9 +10,9 @@ namespace APIBulaFacil.Application.ViewModels.Medicamentos
     public class MedicamentoEdicaoViewModel
     {
         public int IdMedicamento { get; set; }
-        [Required(ErrorMessage = "Campo obrigatório.")]
+        [Required(ErrorMessage = "{0} : Campo obrigatório.")]
         public string Nome { get; set; }
-        [Required(ErrorMessage = "Campo obrigatório.")]
+        [Required(ErrorMessage = "{0} : Campo obrigatório.")]
         public string Tipo { get; set; }
         public string Laboratorio { get; set; }
     }

@@ -9,7 +9,7 @@ namespace APIBulaFacil.Application.ViewModels.BulasFacil
 {
     public class BulaFacilCadastroViewModel
     {
-        [Required(ErrorMessage = "Campo obrigatório.")]
+        [Required(ErrorMessage = "{0} : Campo obrigatório.")]
         public string Link { get; set; }
     }
 }

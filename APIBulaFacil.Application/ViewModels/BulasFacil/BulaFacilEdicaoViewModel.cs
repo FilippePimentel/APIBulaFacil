@@ -11,7 +11,7 @@ namespace APIBulaFacil.Application.ViewModels.BulasFacil
     {
         public int IdBulaFacil { get; set; }
 
-        [Required(ErrorMessage = "Campo obrigatório.")]
+        [Required(ErrorMessage = "{0} : Campo obrigatório.")]
         public string Link { get; set; }
     }
 }
