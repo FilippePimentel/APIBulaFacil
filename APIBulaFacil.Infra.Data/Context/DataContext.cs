@@ -32,6 +32,7 @@ namespace APIBulaFacil.Infra.Data.Context
             modelBuilder.Configurations.Add(new EnderecoConfiguration());
             modelBuilder.Configurations.Add(new MedicamentoConfiguration());
             modelBuilder.Configurations.Add(new MedicamentoFarmaciaConfiguration());
+            modelBuilder.Configurations.Add(new UsuarioMobileConfiguration());
             //modelBuilder.Configurations.Add(new BulaFacilConfiguration());
             //modelBuilder.Configurations.Add(new ModoDeUsoConfiguration());
             //modelBuilder.Configurations.Add(new SubstanciaConfiguration());
@@ -45,7 +46,8 @@ namespace APIBulaFacil.Infra.Data.Context
         public DbSet<Endereco> Endereco { get; set; }
         public DbSet<Medicamento> Medicamento { get; set; }
         public DbSet<MedicamentoFarmacia> MedicamentoFarmacia { get; set; }
-
+        public DbSet<UsuarioMobile> UsuarioMobile { get; set; }
+        
         //public DbSet<ContraIndicacao> ContraIndicacao { get; set; }
         //public DbSet<Indicacao> Indicacao { get; set; }
         //public DbSet<ModoDeUso> ModoDeUso { get; set; }

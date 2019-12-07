@@ -10,11 +10,13 @@ namespace APIBulaFacil.Infra.Data.Configurations
         {
             ToTable("FARMACIA_FAR");
 
-            HasKey(map => map.IdFarmacia);
+            //HasKey(map => map.IdFarmacia);
 
-            Property(u => u.IdFarmacia)
-            .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity)
-            .HasColumnName("FAR_IDFARMACIA");
+            //Property(u => u.IdFarmacia)
+            //.HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity)
+            //.HasColumnName("FAR_IDFARMACIA");
+            Property(map => map.IdUsuario)
+            .HasColumnName("FAR_USUARIO_USU_FK");
 
             Property(map => map.Cnpj)
                 .HasColumnName("FAR_CNPJ")
@@ -30,11 +32,6 @@ namespace APIBulaFacil.Infra.Data.Configurations
                .HasColumnName("FAR_TELEFONE")
                .HasMaxLength(20)
                .IsRequired();
-
-            Property(map => map.Email)
-                .HasColumnName("FAR_EMAIL")
-                .HasMaxLength(80)
-                .IsRequired();
 
             Property(map => map.Site)
                 .HasColumnName("FAR_SITE")

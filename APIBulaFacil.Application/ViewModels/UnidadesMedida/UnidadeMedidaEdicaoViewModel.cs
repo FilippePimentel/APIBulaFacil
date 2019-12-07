@@ -10,7 +10,7 @@ namespace APIBulaFacil.Application.ViewModels.UnidadesMedida
     public class UnidadeMedidaEdicaoViewModel
     {
         public int IdUnidadeMedida { get; set; }
-        [Required(ErrorMessage = "Campo obrigatório.")]
+        [Required(ErrorMessage = "{0} : Campo obrigatório.")]
         public string Tipo { get; set; }
     }
 }

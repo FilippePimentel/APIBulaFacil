@@ -1,5 +1,6 @@
 ﻿using APIBulaFacil.Application.Contracts;
-using APIBulaFacil.Application.ViewModels.Farmacias;
+using APIBulaFacil.Application.ViewModels.UsuarioMobile;
+using APIBulaFacil.Application.ViewModels.Usuarios;
 using APIBulaFacil.Infra.Util;
 using System;
 using System.Collections.Generic;
@@ -10,20 +11,20 @@ using System.Web.Http;
 
 namespace APIBulaFacil.Presentation.Controllers
 {
-    [RoutePrefix("api/Farmacia")]
-    public class FarmaciaController : ApiController
+    [RoutePrefix("api/UsuarioMobile")]
+    public class UsuarioMobileController : ApiController
     {
         //atributo
-        private readonly IFarmaciaApplicationService applicationService;
+        private readonly IUsuarioMobileApplicationService applicationService;
         private MensagemError MensagensErro { get; set; }
 
-        public FarmaciaController(IFarmaciaApplicationService applicationService)
+        public UsuarioMobileController(IUsuarioMobileApplicationService applicationService)
         {
             this.applicationService = applicationService;
         }
 
         [HttpPost]
-        public HttpResponseMessage Post(FarmaciaCadastroViewModel model)
+        public HttpResponseMessage Post(UsuarioMobileCadastroViewModel model)
         {
             if (!ModelState.IsValid)
                 return Request.CreateResponse(HttpStatusCode.BadRequest, MensagemError.GetErrorListFromModelState(ModelState));
@@ -42,7 +43,7 @@ namespace APIBulaFacil.Presentation.Controllers
         }
 
         [HttpPut]
-        public HttpResponseMessage Put(FarmaciaEdicaoViewModel model)
+        public HttpResponseMessage Put(UsuarioMobileEdicaoViewModel model)
         {
             if (!ModelState.IsValid)
             {
@@ -50,6 +51,7 @@ namespace APIBulaFacil.Presentation.Controllers
             }
             try
             {
+                model.Senha = Criptografia.EncryptMD5(model.Senha);
                 applicationService.Alterar(model);
                 return Request.CreateResponse(HttpStatusCode.OK);
             }

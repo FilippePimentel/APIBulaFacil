@@ -10,7 +10,7 @@ namespace APIBulaFacil.Application.ViewModels.ModosDeUso
     public class ModoDeUsoEdicaoViewModel
     {
         public int IdModoDeUso { get; set; }
-        [Required(ErrorMessage = "Campo obrigatório.")]
+        [Required(ErrorMessage = "{0} : Campo obrigatório.")]
         public string DescricaoAdministracao { get; set; }
     }
 }

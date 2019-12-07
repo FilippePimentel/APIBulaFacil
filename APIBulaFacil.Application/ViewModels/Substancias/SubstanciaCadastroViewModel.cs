@@ -9,7 +9,7 @@ namespace APIBulaFacil.Application.ViewModels.Substancias
 {
    public class SubstanciaCadastroViewModel
     {
-        [Required(ErrorMessage = "Campo obrigatório.")]
+        [Required(ErrorMessage = "{0} : Campo obrigatório.")]
         public string Nome { get; set; }
         public string Concentracao { get; set; }
     }

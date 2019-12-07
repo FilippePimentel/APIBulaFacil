@@ -12,17 +12,17 @@ namespace APIBulaFacil.Application.ViewModels.Usuarios
     {
         [MinLength(5, ErrorMessage = "{0} : Informe no mínimo {1} caracteres.")]
         [MaxLength(100, ErrorMessage = "{0} : Informe no máximo {1} caracteres.")]
-        [Required(ErrorMessage = "Campo obrigatório.")]
+        [Required(ErrorMessage = "{0} : Campo obrigatório.")]
         public string Nome { get; set; }
 
         [MinLength(5, ErrorMessage = "{0} : Informe no mínimo {1} caracteres.")]
         [MaxLength(100, ErrorMessage = "{0} : Informe no máximo {1} caracteres.")]
-        [Required(ErrorMessage = "Campo obrigatório.")]
+        [Required(ErrorMessage = "{0} : Campo obrigatório.")]
         public string Email { get; set; }
 
         [MinLength(5, ErrorMessage = "{0} : Informe no mínimo {1} caracteres.")]
         [MaxLength(100, ErrorMessage = "{0} : Informe no máximo {1} caracteres.")]
-        [Required(ErrorMessage = "Campo obrigatório.")]
+        [Required(ErrorMessage = "{0} : Campo obrigatório.")]
         public string Senha { get; set; }
     }
 }

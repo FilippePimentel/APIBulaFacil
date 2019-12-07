@@ -24,7 +24,7 @@ namespace APIBulaFacil.Infra.Data.Configurations
 
             Property(map => map.Nome)
                 .HasColumnName("USU_NOME")
-                .HasMaxLength(150)//50
+                .HasMaxLength(150)
                 .IsRequired();
 
             Property(map => map.Email)

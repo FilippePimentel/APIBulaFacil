@@ -44,6 +44,7 @@ namespace APIBulaFacil.Infra.Data.Repositories
         public IUnidadeMedidaRepository UnidadeMedidaRepository => new UnidadeMedidaRepository(context);
         public IBulaFacilRepository BulaFacilRepository => new BulaFacilRepository(context);
         public IMedicamentoFarmaciaRepository MedicamentoFarmaciaRepository => new MedicamentoFarmaciaRepository(context);
+        public IUsuarioMobileRepository UsuarioMobileRepository => new UsuarioMobileRepository(context);
 
         public void Dispose()
         {

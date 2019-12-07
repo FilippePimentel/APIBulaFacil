@@ -86,6 +86,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configurations\ContraIndicacaoConfiguration.cs" />
+    <Compile Include="Configurations\UsuarioMobileConfiguration.cs" />
     <Compile Include="Configurations\MedicamentoFarmaciaConfiguration.cs" />
     <Compile Include="Configurations\IndicacaoConfiguration.cs" />
     <Compile Include="Configurations\BulaFacilConfiguration.cs" />
@@ -111,6 +112,7 @@
     <Compile Include="Repositories\FarmaciaRepository.cs" />
     <Compile Include="Repositories\UnitOfWork.cs" />
     <Compile Include="Repositories\EnderecoRepository.cs" />
+    <Compile Include="Repositories\UsuarioMobileRepository.cs" />
     <Compile Include="Repositories\UsuarioRepository.cs" />
     <Compile Include="Util\Criptografia.cs" />
   </ItemGroup>
