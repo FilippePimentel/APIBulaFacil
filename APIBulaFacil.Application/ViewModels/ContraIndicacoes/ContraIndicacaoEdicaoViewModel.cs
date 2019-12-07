@@ -10,7 +10,7 @@ namespace APIBulaFacil.Application.ViewModels.ContraIndicacoes
     public class ContraIndicacaoEdicaoViewModel
     {
         public int IdContraIndicacao { get; set; }
-        [Required(ErrorMessage = "Campo obrigatório.")]
+        [Required(ErrorMessage = "{0} : Campo obrigatório.")]
         public string DescricaoContraIndicacao { get; set; }
     }
 }
