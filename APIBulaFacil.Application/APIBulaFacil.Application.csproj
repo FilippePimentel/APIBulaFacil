@@ -253,14 +253,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contracts\IPosologiaApplicationService.cs" />
     <Compile Include="Contracts\IUsuarioMobileApplicationService.cs" />
     <Compile Include="Contracts\IMedicamentoFarmaciaApplicationService.cs" />
     <Compile Include="Contracts\IIndicacaoApplicationService.cs" />
     <Compile Include="Contracts\IMedicamentoApplicationService.cs" />
     <Compile Include="Contracts\IBulaFacilApplicationService.cs" />
-    <Compile Include="Contracts\IUnidadeMedidaApplicationService.cs" />
-    <Compile Include="Contracts\ISubstanciaApplicationService.cs" />
-    <Compile Include="Contracts\IModoDeUsoApplicationService.cs" />
     <Compile Include="Contracts\IContraIndicacaoApplicationService.cs" />
     <Compile Include="Contracts\IFarmaciaApplicationService.cs" />
     <Compile Include="Contracts\IEnderecoApplicationService.cs" />
@@ -269,13 +267,11 @@
     <Compile Include="Mappings\EntityToViewModelMap.cs" />
     <Compile Include="Mappings\ViewModelToEntityMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\PosologiaApplicationService.cs" />
     <Compile Include="Services\UsuarioMobileApplicationService.cs" />
     <Compile Include="Services\MedicamentoFarmaciaApplicationService.cs" />
     <Compile Include="Services\IndicacaoApplicationService.cs" />
     <Compile Include="Services\BulaFacilApplicationService.cs" />
-    <Compile Include="Services\UnidadeMedidaApplicationService.cs" />
-    <Compile Include="Services\SubstanciaApplicationService.cs" />
-    <Compile Include="Services\ModoDeUsoApplicationService.cs" />
     <Compile Include="Services\MedicamentoApplicationService.cs" />
     <Compile Include="Services\ContraIndicacaoApplicationService.cs" />
     <Compile Include="Services\FarmaciaApplicationService .cs" />
@@ -284,6 +280,10 @@
     <Compile Include="ViewModels\BulasFacil\BulaFacilCadastroViewModel.cs" />
     <Compile Include="ViewModels\BulasFacil\BulaFacilConsultaViewModel.cs" />
     <Compile Include="ViewModels\BulasFacil\BulaFacilEdicaoViewModel.cs" />
+    <Compile Include="ViewModels\BulasFacil\ContraIndicacaoBulaViewModel.cs" />
+    <Compile Include="ViewModels\BulasFacil\IndicacaoBulaViewModel.cs" />
+    <Compile Include="ViewModels\BulasFacil\MedicamentoBulaViewModel.cs" />
+    <Compile Include="ViewModels\BulasFacil\PosologiaBulaViewModel.cs" />
     <Compile Include="ViewModels\ContraIndicacoes\ContraIndicacaoCadastroViewModel.cs" />
     <Compile Include="ViewModels\ContraIndicacoes\ContraIndicacaoConsultaViewModel.cs" />
     <Compile Include="ViewModels\ContraIndicacoes\ContraIndicacaoEdicaoViewModel.cs" />
@@ -302,15 +302,9 @@
     <Compile Include="ViewModels\Medicamentos\MedicamentoCadastroViewModel.cs" />
     <Compile Include="ViewModels\Medicamentos\MedicamentoConsultaViewModel.cs" />
     <Compile Include="ViewModels\Medicamentos\MedicamentoEdicaoViewModel.cs" />
-    <Compile Include="ViewModels\ModosDeUso\ModoDeUsoCadastroViewModel.cs" />
-    <Compile Include="ViewModels\ModosDeUso\ModoDeUsoConsultaViewModel.cs" />
-    <Compile Include="ViewModels\ModosDeUso\ModoDeUsoEdicaoViewModel.cs" />
-    <Compile Include="ViewModels\Substancias\SubstanciaCadastroViewModel.cs" />
-    <Compile Include="ViewModels\Substancias\SubstanciaConsultaViewModel.cs" />
-    <Compile Include="ViewModels\Substancias\SubstanciaEdicaoViewModel.cs" />
-    <Compile Include="ViewModels\UnidadesMedida\UnidadeMedidaCadastroViewModel.cs" />
-    <Compile Include="ViewModels\UnidadesMedida\UnidadeMedidaConsultaViewModel.cs" />
-    <Compile Include="ViewModels\UnidadesMedida\UnidadeMedidaEdicaoViewModel.cs" />
+    <Compile Include="ViewModels\Posologias\PosologiaEdicaoViewModel.cs" />
+    <Compile Include="ViewModels\Posologias\PosologiaConsultaViewModel.cs" />
+    <Compile Include="ViewModels\Posologias\PosologiaCadastroViewModel.cs" />
     <Compile Include="ViewModels\UsuarioMobile\UsuarioMobileCadastroViewModel.cs" />
     <Compile Include="ViewModels\UsuarioMobile\UsuarioMobileEdicaoViewModel.cs" />
     <Compile Include="ViewModels\UsuarioMobile\UsuarioMobileConsultaViewModel.cs" />

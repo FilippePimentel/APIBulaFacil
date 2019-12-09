@@ -33,13 +33,10 @@ namespace APIBulaFacil.Infra.Data.Context
             modelBuilder.Configurations.Add(new MedicamentoConfiguration());
             modelBuilder.Configurations.Add(new MedicamentoFarmaciaConfiguration());
             modelBuilder.Configurations.Add(new UsuarioMobileConfiguration());
-            //modelBuilder.Configurations.Add(new BulaFacilConfiguration());
-            //modelBuilder.Configurations.Add(new ModoDeUsoConfiguration());
-            //modelBuilder.Configurations.Add(new SubstanciaConfiguration());
-            //modelBuilder.Configurations.Add(new UnidadeMedidaConfiguration());
-            //modelBuilder.Configurations.Add(new BulaFacilConfiguration());
-            //modelBuilder.Configurations.Add(new ContraIndicacaoConfiguration());
-            //modelBuilder.Configurations.Add(new IndicacaoConfiguration());
+            modelBuilder.Configurations.Add(new BulaFacilConfiguration());
+            modelBuilder.Configurations.Add(new ContraIndicacaoConfiguration());
+            modelBuilder.Configurations.Add(new IndicacaoConfiguration());
+            modelBuilder.Configurations.Add(new PosologiaConfiguration());
         }
         public DbSet<Usuario> Usuario { get; set; }
         public DbSet<Farmacia> Farmacia { get; set; }
@@ -47,13 +44,10 @@ namespace APIBulaFacil.Infra.Data.Context
         public DbSet<Medicamento> Medicamento { get; set; }
         public DbSet<MedicamentoFarmacia> MedicamentoFarmacia { get; set; }
         public DbSet<UsuarioMobile> UsuarioMobile { get; set; }
-        
-        //public DbSet<ContraIndicacao> ContraIndicacao { get; set; }
-        //public DbSet<Indicacao> Indicacao { get; set; }
-        //public DbSet<ModoDeUso> ModoDeUso { get; set; }
-        //public DbSet<Substancia> Substancia { get; set; }
-        //public DbSet<UnidadeMedida> UnidadeMedida { get; set; }
-        //public DbSet<BulaFacil> BulaFacil { get; set; }
+        public DbSet<ContraIndicacao> ContraIndicacao { get; set; }
+        public DbSet<Indicacao> Indicacao { get; set; }
+        public DbSet<BulaFacil> BulaFacil { get; set; }
+        public DbSet<Posologia> Posologia { get; set; }
     }
     public class NpgSqlConfiguration : DbConfiguration
     {

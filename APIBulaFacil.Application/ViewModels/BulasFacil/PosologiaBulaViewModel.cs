@@ -5,11 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace APIBulaFacil.Application.ViewModels.UnidadesMedida
+namespace APIBulaFacil.Application.ViewModels.BulasFacil
 {
-    public class UnidadeMedidaCadastroViewModel
+    public class PosologiaBulaViewModel
     {
         [Required(ErrorMessage = "{0} : Campo obrigatório.")]
-        public string Tipo { get; set; }
+        public int IdPosologia { get; set; }
+
     }
 }

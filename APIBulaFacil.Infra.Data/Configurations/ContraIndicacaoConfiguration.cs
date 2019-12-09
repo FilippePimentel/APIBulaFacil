@@ -8,8 +8,6 @@ namespace APIBulaFacil.Infra.Data.Configurations
     {
         public ContraIndicacaoConfiguration()
         {
-            //        CON_ID: int
-            //        CON_DSCONTRAINDICACAO : String
 
             ToTable("CONTRAINDICACAO_CON");
 

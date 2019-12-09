@@ -10,5 +10,6 @@ namespace APIBulaFacil.Domain.Entities
     {
         public int IdContraIndicacao { get; set; }
         public string DescricaoContraIndicacao { get; set; }
+        public virtual ICollection<BulaFacil> BulasFaceis { get; set; }
     }
 }

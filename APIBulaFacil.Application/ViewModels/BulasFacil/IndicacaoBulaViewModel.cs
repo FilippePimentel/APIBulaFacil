@@ -5,13 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace APIBulaFacil.Application.ViewModels.Substancias
+namespace APIBulaFacil.Application.ViewModels.BulasFacil
 {
-    public class SubstanciaEdicaoViewModel
+    public class IndicacaoBulaViewModel
     {
-        public int IdSubstancia { get; set; }
         [Required(ErrorMessage = "{0} : Campo obrigatório.")]
-        public string Nome { get; set; }
-        public string Concentracao { get; set; }
+        public int IdIndicacao { get; set; }
     }
 }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace APIBulaFacil.Domain.Contracts.Repositories
 {
-    public interface IModoDeUsoRepository : IBaseRepository<ModoDeUso, Int32>
+    public interface IPosologiaRepository : IBaseRepository<Posologia, Int32>
     {
     }
 }

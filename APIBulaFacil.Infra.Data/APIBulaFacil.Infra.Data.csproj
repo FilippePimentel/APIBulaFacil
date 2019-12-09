@@ -86,13 +86,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configurations\ContraIndicacaoConfiguration.cs" />
+    <Compile Include="Configurations\PosologiaConfiguration.cs" />
     <Compile Include="Configurations\UsuarioMobileConfiguration.cs" />
     <Compile Include="Configurations\MedicamentoFarmaciaConfiguration.cs" />
     <Compile Include="Configurations\IndicacaoConfiguration.cs" />
     <Compile Include="Configurations\BulaFacilConfiguration.cs" />
-    <Compile Include="Configurations\UnidadeMedidaConfiguration.cs" />
-    <Compile Include="Configurations\SubstanciaConfiguration.cs" />
-    <Compile Include="Configurations\ModoDeUsoConfiguration.cs" />
     <Compile Include="Configurations\MedicamentoConfiguration.cs" />
     <Compile Include="Configurations\FarmaciaConfiguration.cs" />
     <Compile Include="Configurations\EnderecoConfiguration.cs" />
@@ -103,10 +101,8 @@
     <Compile Include="Repositories\BaseRepository.cs" />
     <Compile Include="Repositories\BulaFacilRepository.cs" />
     <Compile Include="Repositories\MedicamentoFarmaciaRepository.cs" />
-    <Compile Include="Repositories\UnidadeMedidaRepository.cs" />
     <Compile Include="Repositories\IndicacaoRepository.cs" />
-    <Compile Include="Repositories\SubstanciaRepository.cs" />
-    <Compile Include="Repositories\ModoDeUsoRepository.cs" />
+    <Compile Include="Repositories\PosologiaRepository.cs" />
     <Compile Include="Repositories\MedicamentoRepository.cs" />
     <Compile Include="Repositories\ContraIndicacaoRepository.cs" />
     <Compile Include="Repositories\FarmaciaRepository.cs" />

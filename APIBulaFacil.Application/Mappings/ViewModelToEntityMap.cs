@@ -5,9 +5,7 @@ using APIBulaFacil.Application.ViewModels.Farmacias;
 using APIBulaFacil.Application.ViewModels.Indicacoes;
 using APIBulaFacil.Application.ViewModels.MedicamentoFarmacias;
 using APIBulaFacil.Application.ViewModels.Medicamentos;
-using APIBulaFacil.Application.ViewModels.ModosDeUso;
-using APIBulaFacil.Application.ViewModels.Substancias;
-using APIBulaFacil.Application.ViewModels.UnidadesMedida;
+using APIBulaFacil.Application.ViewModels.Posologias;
 using APIBulaFacil.Application.ViewModels.UsuarioMobile;
 using APIBulaFacil.Application.ViewModels.Usuarios;
 using APIBulaFacil.Domain.Entities;
@@ -73,23 +71,43 @@ namespace APIBulaFacil.Application.Mappings
             CreateMap<MedicamentoCadastroViewModel, Medicamento>();
             CreateMap<MedicamentoEdicaoViewModel, Medicamento>();
 
-            CreateMap<ModoDeUsoCadastroViewModel, ModoDeUso>();
-            CreateMap<ModoDeUsoEdicaoViewModel, ModoDeUso>();
+            CreateMap<BulaFacilCadastroViewModel, BulaFacil>().
+                ForMember(BulaFacil => BulaFacil.Medicamento, map => map
+                .MapFrom(medicamento => new Medicamento { IdMedicamento = medicamento.IdMedicamento }))
+                .ReverseMap();
+            CreateMap<BulaFacilEdicaoViewModel, BulaFacil>()
+                .ForMember(BulaFacil => BulaFacil.Medicamento, map => map
+                .MapFrom(medicamento => new Medicamento { IdMedicamento = medicamento.IdMedicamento }))
+                .ReverseMap(); ;
 
-            CreateMap<SubstanciaCadastroViewModel, Substancia>();
-            CreateMap<SubstanciaEdicaoViewModel, Substancia>();
+            CreateMap<MedicamentoFarmaciaCadastroViewModel, MedicamentoFarmacia>()
+                 .AfterMap((src, dest) => dest.Inicio
+                 = Convert.ToDateTime(src.Inicio))
+                 .AfterMap((src, dest) => dest.Fim
+                 = Convert.ToDateTime(src.Fim));
+            CreateMap<MedicamentoFarmaciaEdicaoViewModel, MedicamentoFarmacia>()
+                .AfterMap((src, dest) => dest.Inicio
+                 = Convert.ToDateTime(src.Inicio))
+                 .AfterMap((src, dest) => dest.Fim
+                 = Convert.ToDateTime(src.Fim));
 
-            CreateMap<UnidadeMedidaCadastroViewModel, UnidadeMedida>();
-            CreateMap<UnidadeMedidaEdicaoViewModel, UnidadeMedida>();
+            CreateMap<UsuarioMobileCadastroViewModel, UsuarioMobile>()
+                .AfterMap((src, dest) => dest.Nascimento
+                 = Convert.ToDateTime(src.Nascimento));
+            CreateMap<UsuarioMobileEdicaoViewModel, UsuarioMobile>()
+                .AfterMap((src, dest) => dest.Nascimento
+                 = Convert.ToDateTime(src.Nascimento));
 
-            CreateMap<BulaFacilCadastroViewModel, BulaFacil>();
-            CreateMap<BulaFacilEdicaoViewModel, BulaFacil>();
+            CreateMap<PosologiaCadastroViewModel, Posologia>();
+            CreateMap<PosologiaEdicaoViewModel, Posologia>();
 
-            CreateMap<MedicamentoFarmaciaCadastroViewModel, MedicamentoFarmacia>();
-            CreateMap<MedicamentoFarmaciaEdicaoViewModel, MedicamentoFarmacia>();
 
-            CreateMap<UsuarioMobileCadastroViewModel, UsuarioMobile>();
-            CreateMap<UsuarioMobileEdicaoViewModel, UsuarioMobile>();
+            CreateMap<PosologiaBulaViewModel, Posologia>();
+            CreateMap<IndicacaoBulaViewModel, Indicacao>();
+            CreateMap<ContraIndicacaoBulaViewModel, ContraIndicacao>();
+            CreateMap<MedicamentoBulaViewModel, Medicamento>();
         }
+
+
     }
 }

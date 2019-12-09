@@ -5,11 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace APIBulaFacil.Application.ViewModels.ModosDeUso
+namespace APIBulaFacil.Application.ViewModels.BulasFacil
 {
-    public class ModoDeUsoCadastroViewModel
+    public class MedicamentoBulaViewModel
     {
         [Required(ErrorMessage = "{0} : Campo obrigatório.")]
-        public string DescricaoAdministracao { get; set; }
+        public int IdMedicamento {get;set;}
     }
 }

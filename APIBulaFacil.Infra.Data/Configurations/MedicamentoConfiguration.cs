@@ -8,11 +8,6 @@ namespace APIBulaFacil.Infra.Data.Configurations
     {
         public MedicamentoConfiguration()
         {
-            //MED_ID: int
-            //MED_NOME: string
-            //MED_TIPO: string
-            //MED_LABORATORIO: string
-
             ToTable("MEDICAMENTO_MED");
 
             HasKey(map => map.IdMedicamento);

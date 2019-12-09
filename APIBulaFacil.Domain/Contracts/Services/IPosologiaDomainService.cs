@@ -4,7 +4,7 @@ using System;
 namespace APIBulaFacil.Domain.Contracts.Services
 {
 
-    public interface IUnidadeMedidaDomainService : IBaseDomainService<UnidadeMedida, Int32>
+    public interface IPosologiaDomainService : IBaseDomainService<Posologia, Int32>
     {
     }
 }

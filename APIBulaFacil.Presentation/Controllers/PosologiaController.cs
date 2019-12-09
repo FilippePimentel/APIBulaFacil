@@ -1,5 +1,5 @@
 ﻿using APIBulaFacil.Application.Contracts;
-using APIBulaFacil.Application.ViewModels.ModosDeUso;
+using APIBulaFacil.Application.ViewModels.Posologias;
 using APIBulaFacil.Infra.Util;
 using System;
 using System.Collections.Generic;
@@ -10,20 +10,20 @@ using System.Web.Http;
 
 namespace APIBulaFacil.Presentation.Controllers
 {
-    [RoutePrefix("api/ModoDeUso")]
-    public class ModoDeUsoController : ApiController
+    [RoutePrefix("api/Posologia")]
+    public class PosologiaController : ApiController
     {
         //atributo
-        private readonly IModoDeUsoApplicationService applicationService;
+        private readonly IPosologiaApplicationService applicationService;
         private MensagemError mensagensErro { get; set; }
 
-        public ModoDeUsoController(IModoDeUsoApplicationService applicationService)
+        public PosologiaController(IPosologiaApplicationService applicationService)
         {
             this.applicationService = applicationService;
         }
 
         [HttpPost]
-        public HttpResponseMessage Post(ModoDeUsoCadastroViewModel model)
+        public HttpResponseMessage Post(PosologiaCadastroViewModel model)
         {
             if (!ModelState.IsValid)
                 return Request.CreateResponse(HttpStatusCode.BadRequest, MensagemError.GetErrorListFromModelState(ModelState));
@@ -41,7 +41,7 @@ namespace APIBulaFacil.Presentation.Controllers
         }
 
         [HttpPut]
-        public HttpResponseMessage Put(ModoDeUsoEdicaoViewModel model)
+        public HttpResponseMessage Put(PosologiaEdicaoViewModel model)
         {
             if (!ModelState.IsValid)
             {

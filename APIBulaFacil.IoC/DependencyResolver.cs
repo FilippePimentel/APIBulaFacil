@@ -42,18 +42,6 @@ namespace APIBulaFacil.IoC
             container.Register<IMedicamentoDomainService, MedicamentoDomainService>(Lifestyle.Scoped);
             container.Register<IMedicamentoRepository, MedicamentoRepository>(Lifestyle.Scoped);
 
-            container.Register<IModoDeUsoApplicationService, ModoDeUsoApplicationService>(Lifestyle.Scoped);
-            container.Register<IModoDeUsoDomainService, ModoDeUsoDomainService>(Lifestyle.Scoped);
-            container.Register<IModoDeUsoRepository, ModoDeUsoRepository>(Lifestyle.Scoped);
-
-            container.Register<ISubstanciaApplicationService, SubstanciaApplicationService>(Lifestyle.Scoped);
-            container.Register<ISubstanciaDomainService, SubstanciaDomainService>(Lifestyle.Scoped);
-            container.Register<ISubstanciaRepository, SubstanciaRepository>(Lifestyle.Scoped);
-
-            container.Register<IUnidadeMedidaApplicationService, UnidadeMedidaApplicationService>(Lifestyle.Scoped);
-            container.Register<IUnidadeMedidaDomainService, UnidadeMedidaDomainService>(Lifestyle.Scoped);
-            container.Register<IUnidadeMedidaRepository, UnidadeMedidaRepository>(Lifestyle.Scoped);
-
             container.Register<IBulaFacilApplicationService, BulaFacilApplicationService>(Lifestyle.Scoped);
             container.Register<IBulaFacilDomainService, BulaFacilDomainService>(Lifestyle.Scoped);
             container.Register<IBulaFacilRepository, BulaFacilRepository>(Lifestyle.Scoped);
@@ -65,6 +53,10 @@ namespace APIBulaFacil.IoC
             container.Register<IUsuarioMobileApplicationService, UsuarioMobileApplicationService>(Lifestyle.Scoped);
             container.Register<IUsuarioMobileDomainService, UsuarioMobileDomainService>(Lifestyle.Scoped);
             container.Register<IUsuarioMobileRepository, UsuarioMobileRepository>(Lifestyle.Scoped);
+
+            container.Register<IPosologiaApplicationService, PosologiaApplicationService>(Lifestyle.Scoped);
+            container.Register<IPosologiaDomainService, PosologiaDomainService>(Lifestyle.Scoped);
+            container.Register<IPosologiaRepository, PosologiaRepository>(Lifestyle.Scoped);
 
             container.Register<IUnitOfWork, UnitOfWork>(Lifestyle.Scoped);
             container.Register<DataContext>(Lifestyle.Scoped);

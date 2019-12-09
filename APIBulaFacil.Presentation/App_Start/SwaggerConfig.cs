@@ -19,7 +19,8 @@ namespace APIBulaFacil.Presentation
                            {
                                //c.DocumentFilter<AuthTokenOperation>();
                                //c.OperationFilter<AuthorizationHeaderParameterOperationFilter>(); 
-                               c.SingleApiVersion("v1", "APIBulaFacil.Presentation");
+                               c.SingleApiVersion("v1", "Bula Fácil API - TCC UNIGRANRIO 2019")
+                               .Description("Projeto TCC - Filippe, Juliana, Ruan");
 })
                 .EnableSwaggerUi(c =>
                     {

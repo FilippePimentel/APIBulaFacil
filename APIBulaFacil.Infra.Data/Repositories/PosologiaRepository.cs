@@ -10,11 +10,11 @@ using System.Threading.Tasks;
 
 namespace APIBulaFacil.Infra.Data.Repositories
 {
-    public class ModoDeUsoRepository : BaseRepository<ModoDeUso, Int32>, IModoDeUsoRepository
+    public class PosologiaRepository : BaseRepository<Posologia, Int32>, IPosologiaRepository
     {
         private readonly DataContext context;
 
-        public ModoDeUsoRepository(DataContext context) : base(context)
+        public PosologiaRepository(DataContext context) : base(context)
         {
             this.context = context;
         }

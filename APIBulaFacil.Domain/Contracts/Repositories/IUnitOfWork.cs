@@ -19,10 +19,8 @@ namespace APIBulaFacil.Domain.Contracts.Repositories
         IBulaFacilRepository BulaFacilRepository { get; }
         IIndicacaoRepository IndicacaoRepository { get; }
         IMedicamentoRepository MedicamentoRepository { get; }
-        IModoDeUsoRepository ModoDeUsoRepository { get; }
-        ISubstanciaRepository SubstanciaRepository { get; }
-        IUnidadeMedidaRepository UnidadeMedidaRepository { get; }
         IMedicamentoFarmaciaRepository MedicamentoFarmaciaRepository { get; }
         IUsuarioMobileRepository UsuarioMobileRepository { get; }
+        IPosologiaRepository PosologiaRepository { get; }
     }
 }

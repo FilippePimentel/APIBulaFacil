@@ -9,10 +9,10 @@ using System.Threading.Tasks;
 
 namespace APIBulaFacil.Domain.Services
 {
-    public class ModoDeUsoDomainService : BaseDomainService<ModoDeUso, Int32>, IModoDeUsoDomainService
+    public class PosologiaDomainService : BaseDomainService<Posologia, Int32>, IPosologiaDomainService
     {
         private readonly IUnitOfWork repository;
-        public ModoDeUsoDomainService(IUnitOfWork repository) : base(repository.ModoDeUsoRepository)
+        public PosologiaDomainService(IUnitOfWork repository) : base(repository.PosologiaRepository)
         {
             this.repository = repository;
         }

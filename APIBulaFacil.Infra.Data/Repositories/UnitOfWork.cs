@@ -39,12 +39,10 @@ namespace APIBulaFacil.Infra.Data.Repositories
         public IContraIndicacaoRepository ContraIndicacaoRepository => new ContraIndicacaoRepository(context);
         public IIndicacaoRepository IndicacaoRepository => new IndicacaoRepository(context);
         public IMedicamentoRepository MedicamentoRepository => new MedicamentoRepository(context);
-        public IModoDeUsoRepository ModoDeUsoRepository => new ModoDeUsoRepository(context);
-        public ISubstanciaRepository SubstanciaRepository => new SubstanciaRepository(context);
-        public IUnidadeMedidaRepository UnidadeMedidaRepository => new UnidadeMedidaRepository(context);
         public IBulaFacilRepository BulaFacilRepository => new BulaFacilRepository(context);
         public IMedicamentoFarmaciaRepository MedicamentoFarmaciaRepository => new MedicamentoFarmaciaRepository(context);
         public IUsuarioMobileRepository UsuarioMobileRepository => new UsuarioMobileRepository(context);
+        public IPosologiaRepository PosologiaRepository => new PosologiaRepository(context);
 
         public void Dispose()
         {
