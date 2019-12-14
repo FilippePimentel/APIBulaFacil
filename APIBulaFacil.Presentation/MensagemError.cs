@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,13 +9,24 @@ namespace APIBulaFacil.Presentation
 {
     public class MensagemError
     {
-        public static List<string> GetErrorListFromModelState (ModelStateDictionary modelState)
+        public static Hashtable GetErrorListFromModelState(ModelStateDictionary ModelState)
         {
-            var query = from state in modelState.Values
-                        from error in state.Errors
-                        select error.ErrorMessage;
+            //declarando um Hashtable
+            var erros = new Hashtable();
+            //percorrendo cada posição do ModelState
+            foreach (var item in ModelState)
+            {
+                //verificando se contem erros de validação
+                if (item.Value.Errors.Count > 0)
+                {
+                    erros[item.Key] = item.Value.Errors.Select
 
-            return query.ToList();
+                    (e => e.ErrorMessage).ToList();
+
+                }
+            }
+            //retornando
+            return erros;
         }
     }
 }
