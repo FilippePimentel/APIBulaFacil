@@ -28,16 +28,19 @@ namespace APIBulaFacil.Infra.Data.Configurations
             .HasColumnName("BFA_VALIDO")
             .HasMaxLength(1)
             .IsRequired();
-            
-            HasRequired(s => s.Medicamento).WithOptional(a => a.BulaFacil).Map(x => x.MapKey("BFA_RFMED")); 
-            
-            HasMany(u => u.Indicacoes).WithMany(t => t.BulasFaceis)
-            .Map(m =>
-            {
-                m.ToTable("BULAINDICACAO_BIN");
-                m.MapLeftKey("BIN_RFBFA");
-                m.MapRightKey("BIN_RFIND");
-            });
+
+            HasRequired(s => s.Medicamento).WithOptional(a => a.BulaFacil).Map(x => x.MapKey("BFA_RFMED"));
+
+            //HasMany(u => u.Indicacoes).WithMany(t => t.BulasFaceis)
+            //.Map(m =>
+            //{
+            //    m.ToTable("BULAINDICACAO_BIN");
+            //    m.MapLeftKey("BIN_RFBFA");
+            //    m.MapRightKey("BIN_RFIND");
+            //});
+            Property(map => map.Indicacao)
+            .HasColumnName("BFA_INDICACAO")
+            .HasMaxLength(1000);
 
             HasMany(u => u.Posologias).WithMany(t => t.BulasFaceis)
                 .Map(m =>
@@ -47,13 +50,17 @@ namespace APIBulaFacil.Infra.Data.Configurations
                 m.MapRightKey("BPO_RFPOS");
             });
 
-            HasMany(u => u.ContraIndicacoes).WithMany(t => t.BulasFaceis)
-                .Map(m =>
-            {
-                m.ToTable("BULACONTRAINDICACAO_BCI");
-                m.MapLeftKey("BCI_RFBFA");
-                m.MapRightKey("BCI_RFCON");
-            });
+            Property(map => map.ContraIndicacao)
+            .HasColumnName("BFA_CONTRAINDICACAO")
+            .HasMaxLength(1000);
+
+            //HasMany(u => u.ContraIndicacoes).WithMany(t => t.BulasFaceis)
+            //    .Map(m =>
+            //{
+            //    m.ToTable("BULACONTRAINDICACAO_BCI");
+            //    m.MapLeftKey("BCI_RFBFA");
+            //    m.MapRightKey("BCI_RFCON");
+            //});
         }
     }
 }

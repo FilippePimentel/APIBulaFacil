@@ -28,14 +28,14 @@ namespace APIBulaFacil.Infra.Data.Repositories
             {
                 context.Entry(tag).State = EntityState.Unchanged;
             }
-            foreach (var tag in bulaFacil.Indicacoes)
-            {
-                context.Entry(tag).State = EntityState.Unchanged;
-            }
-            foreach (var tag in bulaFacil.ContraIndicacoes)
-            {
-                context.Entry(tag).State = EntityState.Unchanged;
-            }
+            //foreach (var tag in bulaFacil.Indicacoes)
+            //{
+            //    context.Entry(tag).State = EntityState.Unchanged;
+            //}
+            //foreach (var tag in bulaFacil.ContraIndicacoes)
+            //{
+            //    context.Entry(tag).State = EntityState.Unchanged;
+            //}
 
             context.Entry(bulaFacil.Medicamento).State = EntityState.Unchanged;
 
@@ -46,13 +46,15 @@ namespace APIBulaFacil.Infra.Data.Repositories
         {
             var ObjetoDoBanco = base.GetById(obj.IdBulaFacil);
 
-            List<ContraIndicacao> ContraIndicacoesSalvas = new List<ContraIndicacao>();
-            List<Indicacao> IndicacoesSalvas = new List<Indicacao>();
+            //List<ContraIndicacao> ContraIndicacoesSalvas = new List<ContraIndicacao>();
+            //List<Indicacao> IndicacoesSalvas = new List<Indicacao>();
             List<Posologia> PosologiasSalvas = new List<Posologia>();
 
             ObjetoDoBanco.Link = obj.Link;
             ObjetoDoBanco.Substancia = obj.Substancia;
             ObjetoDoBanco.Valido = obj.Valido;
+            ObjetoDoBanco.ContraIndicacao = obj.ContraIndicacao;
+            ObjetoDoBanco.Indicacao = obj.Indicacao;
             ObjetoDoBanco.Medicamento = new Medicamento() { IdMedicamento = obj.Medicamento.IdMedicamento };
             
             List<Posologia> posologiasDeletadas = new List<Posologia>();
@@ -89,72 +91,72 @@ namespace APIBulaFacil.Infra.Data.Repositories
                 ObjetoDoBanco.Posologias.Add(item);
             }
 
-            List<ContraIndicacao> contraIndicacoesDeletadas = new List<ContraIndicacao>();
+            //List<ContraIndicacao> contraIndicacoesDeletadas = new List<ContraIndicacao>();
 
-            foreach (var contraIndicacaoNoBanco in ObjetoDoBanco.ContraIndicacoes)
-            {
-                if (!obj.ContraIndicacoes.Any(e => e.IdContraIndicacao == contraIndicacaoNoBanco.IdContraIndicacao))
-                {
-                    contraIndicacoesDeletadas.Add(contraIndicacaoNoBanco);
-                }
-            }
-            contraIndicacoesDeletadas.ForEach(c => { ObjetoDoBanco.ContraIndicacoes.Remove(c); });
+            //foreach (var contraIndicacaoNoBanco in ObjetoDoBanco.ContraIndicacoes)
+            //{
+            //    if (!obj.ContraIndicacoes.Any(e => e.IdContraIndicacao == contraIndicacaoNoBanco.IdContraIndicacao))
+            //    {
+            //        contraIndicacoesDeletadas.Add(contraIndicacaoNoBanco);
+            //    }
+            //}
+            //contraIndicacoesDeletadas.ForEach(c => { ObjetoDoBanco.ContraIndicacoes.Remove(c); });
 
-            ObjetoDoBanco.ContraIndicacoes.ToList().ForEach(ContraIndicacao =>
-            {
-                var ContraIndicacaoVO = obj.ContraIndicacoes.Where(c => c.IdContraIndicacao == ContraIndicacao.IdContraIndicacao).FirstOrDefault();
-                obj.ContraIndicacoes.Remove(ContraIndicacaoVO);
-                ContraIndicacoesSalvas.Add(ContraIndicacaoVO);
-            }
-            );
+            //ObjetoDoBanco.ContraIndicacoes.ToList().ForEach(ContraIndicacao =>
+            //{
+            //    var ContraIndicacaoVO = obj.ContraIndicacoes.Where(c => c.IdContraIndicacao == ContraIndicacao.IdContraIndicacao).FirstOrDefault();
+            //    obj.ContraIndicacoes.Remove(ContraIndicacaoVO);
+            //    ContraIndicacoesSalvas.Add(ContraIndicacaoVO);
+            //}
+            //);
 
-            var novasContraIndicacoes = obj.ContraIndicacoes.Select(ContraIndicacaoVO =>
-            {
-                var ContraIndicacao = new ContraIndicacao()
-                {
-                    IdContraIndicacao = ContraIndicacaoVO.IdContraIndicacao
-                };
-                return ContraIndicacao;
-            }).ToList();
+            //var novasContraIndicacoes = obj.ContraIndicacoes.Select(ContraIndicacaoVO =>
+            //{
+            //    var ContraIndicacao = new ContraIndicacao()
+            //    {
+            //        IdContraIndicacao = ContraIndicacaoVO.IdContraIndicacao
+            //    };
+            //    return ContraIndicacao;
+            //}).ToList();
 
-            foreach (var item in novasContraIndicacoes)
-            {
-                ObjetoDoBanco.ContraIndicacoes.Add(item);
-            }
+            //foreach (var item in novasContraIndicacoes)
+            //{
+            //    ObjetoDoBanco.ContraIndicacoes.Add(item);
+            //}
 
-            List<Indicacao> indicacoesDeletadas = new List<Indicacao>();
+            //List<Indicacao> indicacoesDeletadas = new List<Indicacao>();
 
-            foreach (var indicacaoNoBanco in ObjetoDoBanco.Indicacoes)
-            {
-                if (!obj.Indicacoes.Any(e => e.IdIndicacao == indicacaoNoBanco.IdIndicacao))
-                {
-                    indicacoesDeletadas.Add(indicacaoNoBanco);
-                }
-            }
+            //foreach (var indicacaoNoBanco in ObjetoDoBanco.Indicacoes)
+            //{
+            //    if (!obj.Indicacoes.Any(e => e.IdIndicacao == indicacaoNoBanco.IdIndicacao))
+            //    {
+            //        indicacoesDeletadas.Add(indicacaoNoBanco);
+            //    }
+            //}
 
-            indicacoesDeletadas.ForEach(c => { ObjetoDoBanco.Indicacoes.Remove(c); });
+            //indicacoesDeletadas.ForEach(c => { ObjetoDoBanco.Indicacoes.Remove(c); });
 
-            ObjetoDoBanco.Indicacoes.ToList().ForEach(indicacao =>
-            {
-                var indicacaoVO = obj.Indicacoes.Where(c => c.IdIndicacao == indicacao.IdIndicacao).FirstOrDefault();
-                obj.Indicacoes.Remove(indicacaoVO);
-                IndicacoesSalvas.Add(indicacaoVO);
-            }
-            );
+            //ObjetoDoBanco.Indicacoes.ToList().ForEach(indicacao =>
+            //{
+            //    var indicacaoVO = obj.Indicacoes.Where(c => c.IdIndicacao == indicacao.IdIndicacao).FirstOrDefault();
+            //    obj.Indicacoes.Remove(indicacaoVO);
+            //    IndicacoesSalvas.Add(indicacaoVO);
+            //}
+            //);
 
-            var novasIndicacoes = obj.Indicacoes.Select(indicacaoVO =>
-            {
-                var indicacao = new Indicacao()
-                {
-                    IdIndicacao = indicacaoVO.IdIndicacao
-                };
-                return indicacao;
-            }).ToList();
+            //var novasIndicacoes = obj.Indicacoes.Select(indicacaoVO =>
+            //{
+            //    var indicacao = new Indicacao()
+            //    {
+            //        IdIndicacao = indicacaoVO.IdIndicacao
+            //    };
+            //    return indicacao;
+            //}).ToList();
 
-            foreach (var item in novasIndicacoes)
-            {
-                ObjetoDoBanco.Indicacoes.Add(item);
-            }
+            //foreach (var item in novasIndicacoes)
+            //{
+            //    ObjetoDoBanco.Indicacoes.Add(item);
+            //}
 
             ObjetoDoBanco.Posologias.Except(obj.Posologias.Select(vo => new Posologia()
             {
@@ -165,15 +167,14 @@ namespace APIBulaFacil.Infra.Data.Repositories
             {
                     context.Entry(tag).State = EntityState.Unchanged;
             }
-            
-            foreach (var tag in ObjetoDoBanco.Indicacoes)
-            {
-                context.Entry(tag).State = EntityState.Unchanged;
-            }
-            foreach (var tag in ObjetoDoBanco.ContraIndicacoes)
-            {
-                context.Entry(tag).State = EntityState.Unchanged;
-            }
+            //foreach (var tag in ObjetoDoBanco.Indicacoes)
+            //{
+            //    context.Entry(tag).State = EntityState.Unchanged;
+            //}
+            //foreach (var tag in ObjetoDoBanco.ContraIndicacoes)
+            //{
+            //    context.Entry(tag).State = EntityState.Unchanged;
+            //}
 
             context.Entry(ObjetoDoBanco.Medicamento).State = EntityState.Unchanged;
 

@@ -10,6 +10,8 @@ using APIBulaFacil.Application.ViewModels.UsuarioMobile;
 using APIBulaFacil.Application.ViewModels.Usuarios;
 using APIBulaFacil.Domain.Entities;
 using AutoMapper;
+using System;
+using System.Globalization;
 
 namespace APIBulaFacil.Application.Mappings
 {
@@ -23,12 +25,19 @@ namespace APIBulaFacil.Application.Mappings
             CreateMap<ContraIndicacao, ContraIndicacaoConsultaViewModel>();
             CreateMap<Indicacao, IndicacaoConsultaViewModel>();
             CreateMap<Medicamento, MedicamentoConsultaViewModel>();
-            CreateMap<BulaFacil, BulaFacilConsultaViewModel>();
+            CreateMap<BulaFacil, BulaFacilConsultaViewModel>()
+                .ForMember(dest => dest.NomeMedicamento,
+               opts => opts.MapFrom(src => src.Medicamento.Nome));
+
             CreateMap<MedicamentoFarmacia, MedicamentoFarmaciaConsultaViewModel>()
                 .ForMember(dest => dest.NomeMedicamento,
                opts => opts.MapFrom(src => src.Medicamento.Nome))
                 .ForMember(dest => dest.NomeFarmacia,
-               opts => opts.MapFrom(src => src.Farmacia.Nome));
+               opts => opts.MapFrom(src => src.Farmacia.Nome))
+               .AfterMap((src, dest) => dest.Inicio
+                 = (src.Inicio).ToString("dd/MM/yyyy", CultureInfo.InvariantCulture))
+               .AfterMap((src, dest) => dest.Fim
+                 = (src.Fim)!= null ? (src.Fim).Value.ToString("dd/MM/yyyy", CultureInfo.InvariantCulture) : "n/a");
             CreateMap<UsuarioMobile, UsuarioMobileConsultaViewModel>();
             CreateMap<Posologia, PosologiaConsultaViewModel>();
         }

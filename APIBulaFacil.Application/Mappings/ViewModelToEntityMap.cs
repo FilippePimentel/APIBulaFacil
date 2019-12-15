@@ -12,6 +12,7 @@ using APIBulaFacil.Domain.Entities;
 using AutoMapper;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -87,9 +88,9 @@ namespace APIBulaFacil.Application.Mappings
                  = Convert.ToDateTime(src.Fim));
             CreateMap<MedicamentoFarmaciaEdicaoViewModel, MedicamentoFarmacia>()
                 .AfterMap((src, dest) => dest.Inicio
-                 = Convert.ToDateTime(src.Inicio))
+                 = DateTime.ParseExact((src.Inicio), "dd/MM/yyyy", CultureInfo.InvariantCulture))
                  .AfterMap((src, dest) => dest.Fim
-                 = Convert.ToDateTime(src.Fim));
+                 = DateTime.ParseExact((src.Fim), "dd/MM/yyyy", CultureInfo.InvariantCulture));
 
             CreateMap<UsuarioMobileCadastroViewModel, UsuarioMobile>()
                 .AfterMap((src, dest) => dest.Nascimento

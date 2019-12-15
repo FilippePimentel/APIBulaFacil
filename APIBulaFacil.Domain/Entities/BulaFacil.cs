@@ -12,11 +12,13 @@ namespace APIBulaFacil.Domain.Entities
         public virtual string Link { get; set; }
         public virtual string Substancia { get; set; }
         public virtual string Valido { get; set; }
+        public virtual string ContraIndicacao { get; set; }
+        public virtual string Indicacao { get; set; }
 
         public virtual Medicamento Medicamento { get; set; }
         public virtual ICollection<Posologia> Posologias { get; set; }
-        public virtual ICollection<ContraIndicacao> ContraIndicacoes { get; set; }
-        public virtual ICollection<Indicacao> Indicacoes { get; set; }
+        //public virtual ICollection<ContraIndicacao> ContraIndicacoes { get; set; }
+        //public virtual ICollection<Indicacao> Indicacoes { get; set; }
        
     }
 }
