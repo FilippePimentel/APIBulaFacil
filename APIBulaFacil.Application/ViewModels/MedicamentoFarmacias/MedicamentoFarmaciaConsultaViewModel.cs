@@ -12,6 +12,11 @@ namespace APIBulaFacil.Application.ViewModels.MedicamentoFarmacias
         public string Inicio { get; set; }
         public string Fim { get; set; }
 
+        public int IdFarmacia{ get; set; }
+        public string NomeFarmacia { get; set; }
+        public int IdMedicamento { get; set; }
+        public string NomeMedicamento { get; set; }
+
         #region Relacionamentos
         public FarmaciaConsultaViewModel Farmacia { get; set; }
         public MedicamentoConsultaViewModel Medicamento { get; set; }
