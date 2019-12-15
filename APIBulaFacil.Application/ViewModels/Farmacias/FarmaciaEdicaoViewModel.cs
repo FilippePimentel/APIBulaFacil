@@ -29,21 +29,5 @@ namespace APIBulaFacil.Application.ViewModels.Farmacias
         [Required(ErrorMessage = "{0} : Campo obrigatório.")]
         public string Site { get; set; }
 
-        #region Endereco
-
-        [Required(ErrorMessage = "{0} : Campo obrigatório.")]
-        public string Rua { get; set; }
-        public string Complemento { get; set; }
-        [Required(ErrorMessage = "{0} : Campo obrigatório.")]
-        public string Cidade { get; set; }
-        [Required(ErrorMessage = "{0} : Campo obrigatório.")]
-        public string Cep { get; set; }
-        [Required(ErrorMessage = "{0} : Campo obrigatório.")]
-        public string Uf { get; set; }
-        public decimal Latitude { get; set; }
-        public decimal Longitude { get; set; }
-        public string Pluscode { get; set; }
-
-        #endregion
     }
 }
