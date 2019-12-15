@@ -1,12 +1,8 @@
 ﻿using APIBulaFacil.Domain.Contracts.Repositories;
 using APIBulaFacil.Domain.Entities;
 using APIBulaFacil.Infra.Data.Context;
-using APIBulaFacil.Infra.Util;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data.Entity;
 
 namespace APIBulaFacil.Infra.Data.Repositories
 {
@@ -19,5 +15,14 @@ namespace APIBulaFacil.Infra.Data.Repositories
             this.context = context;
         }
 
+        public override void Remove(Farmacia farmacia)
+        {
+            if (farmacia.Endereco != null)
+            {
+                context.Entry(farmacia.Endereco).State = EntityState.Deleted;
+            }
+            context.Entry(farmacia).State = EntityState.Deleted;
+            context.SaveChanges();
+        }
     }
 }

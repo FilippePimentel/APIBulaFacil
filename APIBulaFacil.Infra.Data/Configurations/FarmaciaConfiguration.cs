@@ -37,10 +37,10 @@ namespace APIBulaFacil.Infra.Data.Configurations
                 .HasColumnName("FAR_SITE")
                 .HasMaxLength(80)
                 .IsRequired();
-            
+
             #region Relacionamentos
             HasOptional(s => s.Endereco) // Mark Address property optional in Student entity
-                .WithRequired(ad => ad.Farmacia).Map(m => m.MapKey("FAR_ENDERECOFARMACIA_FK"));
+                .WithRequired(ad => ad.Farmacia).Map(m => m.MapKey("FAR_ENDERECOFARMACIA_FK")).WillCascadeOnDelete();
             #endregion
 
         }
