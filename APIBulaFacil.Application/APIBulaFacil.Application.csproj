@@ -308,6 +308,7 @@
     <Compile Include="ViewModels\UsuarioMobile\UsuarioMobileCadastroViewModel.cs" />
     <Compile Include="ViewModels\UsuarioMobile\UsuarioMobileEdicaoViewModel.cs" />
     <Compile Include="ViewModels\UsuarioMobile\UsuarioMobileConsultaViewModel.cs" />
+    <Compile Include="ViewModels\Usuarios\UsuarioLoginViewModel.cs" />
     <Compile Include="ViewModels\Usuarios\UsuarioCadastroViewModel.cs" />
     <Compile Include="ViewModels\Usuarios\UsuarioConsultaViewModel.cs" />
     <Compile Include="ViewModels\Usuarios\UsuarioEdicaoViewModel.cs" />

@@ -106,5 +106,21 @@ namespace APIBulaFacil.Presentation.Controllers
                     (HttpStatusCode.InternalServerError, e.Message);
             }
         }
+
+        [HttpPost]
+        [Route("Login")]
+        public HttpResponseMessage ValidaLogin(UsuarioLoginViewModel UsuarioLogin)
+        {
+            try
+            {
+                UsuarioConsultaViewModel cons = applicationService.ObterParaValidar(UsuarioLogin.Login, UsuarioLogin.Senha);
+                return Request.CreateResponse(HttpStatusCode.OK);
+            }
+            catch (Exception e)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError);
+            }
+        }
+        
     }
 }
