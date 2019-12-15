@@ -52,14 +52,14 @@ namespace APIBulaFacil.Application.Mappings
               map => map.MapFrom(
                   endereco => new Endereco
                   {
-                      Rua = endereco.Rua,
-                      Cep = endereco.Cep,
-                      Cidade = endereco.Cidade,
-                      Complemento = endereco.Complemento,
-                      Latitude = endereco.Latitude,
-                      Longitude = endereco.Longitude,
-                      Pluscode = endereco.Pluscode,
-                      Uf = endereco.Uf
+                      Rua = "",
+                      Cep = "",
+                      Cidade = "",
+                      Complemento = "",
+                      Latitude = 0,
+                      Longitude = 0,
+                      Pluscode = "",
+                      Uf = ""
                   }));
 
             CreateMap<ContraIndicacaoCadastroViewModel, ContraIndicacao>();
