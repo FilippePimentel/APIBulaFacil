@@ -13,12 +13,17 @@ namespace APIBulaFacil.Application.ViewModels.BulasFacil
 {
     public class BulaFacilCadastroViewModel
     {
-        public string Link { get; set; }
-        public string Substancia { get; set; }
-        public string Valido { get; set; }
-        public int IdMedicamento { get; set; }
 
+        public string Link { get; set; }
+        [Required(ErrorMessage = "{0} : Campo obrigatório.")]
+        public string Substancia { get; set; }
+        [Required(ErrorMessage = "{0} : Campo obrigatório.")]
+        public string Valido { get; set; }
+        [Required(ErrorMessage = "{0} : Campo obrigatório.")]
+        public int IdMedicamento { get; set; }
+        [Required(ErrorMessage = "{0} : Campo obrigatório.")]
         public string ContraIndicacao { get; set; }
+        [Required(ErrorMessage = "{0} : Campo obrigatório.")]
         public string Indicacao { get; set; }
 
         public virtual ICollection<PosologiaBulaViewModel> Posologias { get; set; }

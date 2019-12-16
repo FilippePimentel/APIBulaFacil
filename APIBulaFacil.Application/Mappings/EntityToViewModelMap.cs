@@ -27,8 +27,9 @@ namespace APIBulaFacil.Application.Mappings
             CreateMap<Medicamento, MedicamentoConsultaViewModel>();
             CreateMap<BulaFacil, BulaFacilConsultaViewModel>()
                 .ForMember(dest => dest.NomeMedicamento,
-               opts => opts.MapFrom(src => src.Medicamento.Nome));
-
+               opts => opts.MapFrom(src => src.Medicamento.Nome))
+                .ForMember(dest => dest.IdMedicamento,
+               opts => opts.MapFrom(src => src.Medicamento.IdMedicamento));
             CreateMap<MedicamentoFarmacia, MedicamentoFarmaciaConsultaViewModel>()
                 .ForMember(dest => dest.NomeMedicamento,
                opts => opts.MapFrom(src => src.Medicamento.Nome))

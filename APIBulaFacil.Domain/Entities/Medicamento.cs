@@ -8,11 +8,11 @@ namespace APIBulaFacil.Domain.Entities
 {
     public class Medicamento
     {
-        public int IdMedicamento { get; set; }
-        public string Nome { get; set; }
-        public string Tipo { get; set; }
-        public string Laboratorio { get; set; }
+        public virtual int IdMedicamento { get; set; }
+        public virtual string Nome { get; set; }
+        public virtual string Tipo { get; set; }
+        public virtual string Laboratorio { get; set; }
         public virtual ICollection<MedicamentoFarmacia> MedicamentosFarmacias { get; set; }
-        public virtual BulaFacil BulaFacil { get; set; }
+        public virtual ICollection<BulaFacil> Bulas { get; set; }
     }
 }

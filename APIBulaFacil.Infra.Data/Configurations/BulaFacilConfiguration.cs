@@ -29,8 +29,12 @@ namespace APIBulaFacil.Infra.Data.Configurations
             .HasMaxLength(1)
             .IsRequired();
 
-            HasRequired(s => s.Medicamento).WithOptional(a => a.BulaFacil).Map(x => x.MapKey("BFA_RFMED"));
+            Property(map => map.IdMedicamento)
+                    .HasColumnName("BFA_RFMED");
 
+            HasRequired(s => s.Medicamento).WithMany(a => a.Bulas)
+                .HasForeignKey(map => map.IdMedicamento).WillCascadeOnDelete();
+            
             //HasMany(u => u.Indicacoes).WithMany(t => t.BulasFaceis)
             //.Map(m =>
             //{

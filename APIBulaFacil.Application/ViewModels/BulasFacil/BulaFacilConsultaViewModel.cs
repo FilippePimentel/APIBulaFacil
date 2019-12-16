@@ -18,7 +18,7 @@ namespace APIBulaFacil.Application.ViewModels.BulasFacil
         public string Substancia { get; set; }
         public string Valido { get; set; }
 
-        public virtual string IdMedicamento { get; set; }
+        public virtual int IdMedicamento { get; set; }
         public virtual string NomeMedicamento { get; set; }
 
         public string ContraIndicacao { get; set; }

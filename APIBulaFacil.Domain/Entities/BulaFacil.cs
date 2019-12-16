@@ -17,6 +17,8 @@ namespace APIBulaFacil.Domain.Entities
 
         public virtual Medicamento Medicamento { get; set; }
         public virtual ICollection<Posologia> Posologias { get; set; }
+
+        public virtual int IdMedicamento { get; set; }
         //public virtual ICollection<ContraIndicacao> ContraIndicacoes { get; set; }
         //public virtual ICollection<Indicacao> Indicacoes { get; set; }
        
